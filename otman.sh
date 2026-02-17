@@ -2,8 +2,10 @@
 #--[1] dialog
 function otman_dialog() {
 options_folder=$1
+options_files=$2
 
 otman_folder
+otman_file
 }
 #--[2]folder
 #-- [2][1] listing folder
@@ -66,8 +68,23 @@ otman_folder_rename
 otman_folder_move
 }
 
+#--[3] file
+#--[3][1] create file
+function otman_file_create() {
+   if [[ $options_files != "create" ]]; then
+    return
+    fi
+}
+
+ud
+
+
+function otman_file() {
+ otman_file_create
+}
+
 
 function otman() {
-otman_dialog $1
+otman_dialog $1 $2
 }
-otman $1
+otman $1 $2
