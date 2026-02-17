@@ -1,0 +1,2 @@
+# otman
+shell script learning
