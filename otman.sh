@@ -32,7 +32,7 @@ function otman_folder_delete() {
   if [[ $options_folder != "delete" ]]; then
     return
     fi
-  read -p "masukan nama folder yang dihapus : " folder_delete_name &&
+  read -p "masukan nama folder yang ingin dihapus : " folder_delete_name &&
   mkdir $folder_delete_name
 }
 
