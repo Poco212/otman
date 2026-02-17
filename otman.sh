@@ -2,6 +2,7 @@
 #--[1] dialog
 function otman_dialog() {
 options_folder=$1
+
 otman_folder
 }
 #--[2]folder
