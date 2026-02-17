@@ -53,6 +53,9 @@ function otman_folder_move() {
   if [[ $options_folder != "move" ]]; then
     return
     fi
+  read -p "masukan nama destinasi folder lama : " destinasi_lama &&
+  read -p "masukan nama destinasi folder baru : " destinasi_baru &&
+  mv $destinasi_lama $destinasi_baru
 }
 
 function otman_folder() {
