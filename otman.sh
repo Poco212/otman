@@ -61,6 +61,18 @@ function otman_folder_move() {
   mv $destinasi_lama $destinasi_baru
 }
 
+#-- [2][6] copy folder
+function otman_folder_copy() {
+  
+  if [[ $options_folder != "copy" ]]; then
+    return
+    fi
+  read -p "masukan nama folder yang ingin dicopy : " folder_copy &&
+  read -p "masukan nama destinasi folder  : " destinasi_folder &&
+  cp -r $folder_copy $destinasi_folder
+}
+
+
 function otman_folder() {
 if [[ $options != "folder" ]]; then
     return
@@ -71,6 +83,7 @@ otman_folder_create
 otman_folder_delete
 otman_folder_rename
 otman_folder_move
+otman_folder_copy
 }
 
 #--[3] file
@@ -81,10 +94,19 @@ function otman_file_create() {
     fi
 }
 
-#-- [2][3] delete file
+#-- [3][2] delete file
 function otman_file_delete() {
   
   if [[ $options_files != "delete" ]]; then
+    return
+    fi
+  
+}
+
+#-- [3][3] rename file
+function otman_file_rename() {
+  
+  if [[ $options_files != "rename" ]]; then
     return
     fi
   
@@ -98,6 +120,7 @@ fi
 
  otman_file_create
  otman_file_delete
+ otman_file_rename
 }
 
 
