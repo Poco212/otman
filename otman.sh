@@ -15,9 +15,19 @@ function otman_folder_create() {
   mkdir $folder_name
 }
 
+#-- [2][2] delete folder
+function otman_folder_delete() {
+  
+  if [[ $options_folder != "delete" ]]; then
+    return
+    fi
+  read -p "masukan nama folder yang dihapus : " folder_delete_name &&
+  mkdir $folder_delete_name
+}
 
 function otman_folder() {
 otman_folder_create
+otman_folder_delete
 }
 
 
