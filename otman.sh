@@ -87,11 +87,22 @@ otman_folder_copy
 }
 
 #--[3] file
+#--[3][1] listing file
+function otman_file_list() {
+  
+  if [[ $options_files != "list" ]]; then
+    return
+    fi
+  read -p "masukan destinasi file : " file_destinasi &&
+  ls -la $file_destinasi
+}
 #--[3][1] create file
 function otman_file_create() {
    if [[ $options_files != "create" ]]; then
     return
     fi
+   read -p "masukan nama file : " file_name &&
+   touch $file_name 
 }
 
 #-- [3][2] delete file
@@ -100,7 +111,8 @@ function otman_file_delete() {
   if [[ $options_files != "delete" ]]; then
     return
     fi
-  
+  read -p "masukan nama file yang ingin dihapus : " file_delete_name &&
+  rm -fr $file_delete_name
 }
 
 #-- [3][3] rename file
@@ -109,7 +121,9 @@ function otman_file_rename() {
   if [[ $options_files != "rename" ]]; then
     return
     fi
-  
+  read -p "masukan nama folder lama : " nama_lama &&
+  read -p "masukan nama folder baru : " nama_baru &&
+  mv $nama_lama $nama_baru
 }
 
 #-- [3][4] fill file
@@ -153,6 +167,7 @@ if [[ $options != "file" ]]; then
     return
 fi
 
+ otman_file_list
  otman_file_create
  otman_file_delete
  otman_file_rename
