@@ -91,7 +91,6 @@ function otman_file_delete() {
 }
 
 
-
 function otman_file() {
 if [[ $options != "file" ]]; then
     return
