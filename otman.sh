@@ -1,7 +1,8 @@
 #!/bin/bash
 #--[1] dialog
 function otman_dialog() {
-options_folder=$1
+options=$1
+options_folder=$2
 options_files=$2
 
 otman_folder
@@ -61,6 +62,10 @@ function otman_folder_move() {
 }
 
 function otman_folder() {
+if [[ $options != "folder" ]]; then
+    return
+fi
+
 otman_folder_list
 otman_folder_create
 otman_folder_delete
@@ -76,11 +81,24 @@ function otman_file_create() {
     fi
 }
 
-ud
+#-- [2][3] delete file
+function otman_file_delete() {
+  
+  if [[ $options_files != "delete" ]]; then
+    return
+    fi
+  
+}
+
 
 
 function otman_file() {
+if [[ $options != "file" ]]; then
+    return
+fi
+
  otman_file_create
+ otman_file_delete
 }
 
 
