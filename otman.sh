@@ -121,8 +121,8 @@ function otman_file_rename() {
   if [[ $options_files != "rename" ]]; then
     return
     fi
-  read -p "masukan nama folder lama : " nama_lama &&
-  read -p "masukan nama folder baru : " nama_baru &&
+  read -p "masukan nama file lama : " nama_lama &&
+  read -p "masukan nama file baru : " nama_baru &&
   mv $nama_lama $nama_baru
 }
 
@@ -132,7 +132,22 @@ function otman_file_fill() {
   if [[ $options_files != "fill" ]]; then
     return
     fi
+  read -p "masukan nama file  : " nama_file &&
+  read -p "masukan isi file : " isi_file &&
+  echo $isi_file >> $nama_file
+
+}
+
+#-- [3][4][1] fill file
+function otman_file_fill_2word() {
   
+  if [[ $options_files != "fills" ]]; then
+    return
+    fi
+  read -p "masukan nama file  : " nama_file &&
+  read -p "masukan isi file : " isi_file &&
+  echo "$isi_file" >> $nama_file
+
 }
 
 #-- [3][5] edit file
@@ -172,6 +187,7 @@ fi
  otman_file_delete
  otman_file_rename
  otman_file_fill
+ otman_file_fill_2word
  otman_file_edit
  otman_file_move
  otman_file_copy
