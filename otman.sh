@@ -112,6 +112,41 @@ function otman_file_rename() {
   
 }
 
+#-- [3][4] fill file
+function otman_file_fill() {
+  
+  if [[ $options_files != "fill" ]]; then
+    return
+    fi
+  
+}
+
+#-- [3][5] edit file
+function otman_file_edit() {
+  
+  if [[ $options_files != "edit" ]]; then
+    return
+    fi
+  
+}
+
+#-- [3][6] move file
+function otman_file_move() {
+  
+  if [[ $options_files != "move" ]]; then
+    return
+    fi
+  
+}
+
+#-- [3][7] copy file
+function otman_file_copy() {
+  
+  if [[ $options_files != "copy" ]]; then
+    return
+    fi
+  
+}
 
 function otman_file() {
 if [[ $options != "file" ]]; then
@@ -121,6 +156,10 @@ fi
  otman_file_create
  otman_file_delete
  otman_file_rename
+ otman_file_fill
+ otman_file_edit
+ otman_file_move
+ otman_file_copy
 }
 
 
