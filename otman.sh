@@ -42,6 +42,9 @@ function otman_folder_rename() {
   if [[ $options_folder != "rename" ]]; then
     return
     fi
+  read -p "masukan nama folder lama : " nama_lama &&
+  read -p "masukan nama folder baru : " nama_baru &&
+  mv $nama_lama $nama_baru
 }
 
 #-- [2][5] move folder
