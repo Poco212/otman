@@ -16,7 +16,7 @@ printf "hello \nworld" > black/dot.txt &&
 sed -i '2 s/world/world !/' black/dot.txt &&
 
 # copy file
-cp black/dot.txt otman/ &&
+cp black/dot.txt otman &&
 
 # jadikan hello dan world menjadi 1 line
 cat > black/dot.txt << EOF
