@@ -13,10 +13,10 @@ rm -fr white black/dit.txt &&
 printf "hello \nworld" > black/dot.txt &&
 
 #edit file world tambahin !
-sed -i '2 s/world\world!' >> black/dot.txt &&
+sed -i '2 s/world\world!' black/dot.txt &&
 
 # copy file
-
+cp black/dot.txt ~/
 
 # jadikan hello dan world menjadi 1 line
 
