@@ -13,18 +13,18 @@ rm -fr white black/dit.txt &&
 printf "hello \nworld" > black/dot.txt &&
 
 #edit file world tambahin !
-sed -i '2 s/world/world!/' black/dot.txt &&
+sed -i '2 s/world/world !/' black/dot.txt &&
 
 # copy file
-cp black/dot.txt ~/
+cp black/dot.txt otman/ &&
 
 # jadikan hello dan world menjadi 1 line
-
-
-# copy file
-
+cat > black/dot.txt << EOF
+hello world!
+EOF
 
 # move file
-
+mv black/dot.txt ~/Documents &&
 
 # copy folder
+cp -r black ~/
