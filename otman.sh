@@ -21,7 +21,7 @@ hello world!
 EOF
 
 # copy file
-cp black/dot.txt ~/Documents &&
+cp black/dot.txt black/dit.txt &&
 
 # move file
 mv black/dot.txt ~/Downloads &&
